@@ -2,13 +2,13 @@ body {
     font-family: Arial,  sans-serif;
     padding: auto;
     margin: auto;
-    background-color: rgba(85, 28, 207, 0.764);
+    background-color: blue;
     margin-top: top;
 }
 
 head {
-    background-image: linear-gradient(to cover);
-    background-color: rgb(0, 255, 217);
+    background-image: linear-gradient(to right);
+    background-color: red;
 }
 
 .carousel img {
