@@ -5,14 +5,16 @@ body {
 }
 
 header {
-    background-image: linear-gradient(to right, #007bff, #6610f2);
-    background-color: aqua;
+    background-image: linear-gradient(to center, #09510dec, #4d6a05);
+    background-color: rgb(46, 9, 81);
+    background-image: -moz-element();
     
 }
 
 .carousel img {
     height: 400px;
     object-fit: cover;
+
 }
 
 footer {
