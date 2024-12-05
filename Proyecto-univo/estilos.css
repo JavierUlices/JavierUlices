@@ -11,12 +11,18 @@ header {
     background-image: linear-gradient(to right, #007bff, #6610f2);
     background-color: aqua;
 
+ 
     
 }
 
 .carousel img {
     height: 400px;
     object-fit: cover;
+
+    div-class {
+        width: 100%;
+    }
+    
 }
 
 footer {
