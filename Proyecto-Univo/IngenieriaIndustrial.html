@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrera de Ingeniería Industrial</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./carreras.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v16.0&appId=TU_APP_ID_DE_FACEBOOK&autoLogAppEvents=1"></script>
+    <script>
+        // Configuración para Google
+        function handleCredentialResponse(response) {
+            const data = JSON.parse(atob(response.credential.split('.')[1]));
+            alert(`¡Bienvenido ${data.name}! Tu correo: ${data.email}`);
+        }
+
+        // Configuración para Facebook
+        function checkLoginState() {
+            FB.getLoginStatus(function(response) {
+                if (response.status === 'connected') {
+                    FB.api('/me', {fields: 'name,email'}, function(data) {
+                        alert(`¡Bienvenido ${data.name}! Tu correo: ${data.email}`);
+                    });
+                }
+            });
+        }
+
+        // Acción para el clic en el ícono de Google
+        function iniciarSesionGoogle() {
+            google.accounts.id.prompt();  
+        }
+    </script>
+</head>
+<body>
+    <header class="bg-secondary text-white text-center p-4">
+        <img src="./logoUnivo.png" alt="Logo UNIVO" class="me-3" style="height: 108px;">
+        <h1>Carrera de Ingeniería Industrial</h1>
+    </header>
+
+    <main class="container my-5">
+        <h2>Sobre la carrera</h2>
+        <p>La carrera de Ingeniería Industrial se enfoca en la optimización de procesos productivos y la gestión de recursos, con el objetivo de mejorar la eficiencia y la competitividad en las organizaciones.</p>
+
+        <h3>Galería</h3>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <img src="./proyectoIndstrial.jpg" class="img-fluid" alt="Proyecto de Ingeniería Industrial">
+            </div>
+            <div class="col-md-4 mb-4">
+                <img src="./industrial diseño.jpg" class="img-fluid" alt="Diseño de Ingeniería Industrial">
+            </div>
+            <div class="col-md-4 mb-4">
+                <img src="./construcciónIndustrial.jpg" class="img-fluid" alt="Construcción Industrial">
+            </div>
+        </div>
+        <a href="./index.html" class="btn btn-primary">Regresar al inicio</a>
+    </main>
+
+    <!-- Íconos para las redes sociales -->
+    <section class="text-center my-5">
+         
+        <div class="d-flex justify-content-center gap-4 mt-4">
+            <!-- Ícono personalizado de Google -->
+            <a href="https://www.univo.edu.sv/ingenieria/ingenieria-industrial/" onclick="iniciarSesionGoogle()" class="text-danger" style="font-size: 36px;">
+                <i class="fab fa-google"></i>
+            </a>
+
+            <!-- Ícono de Facebook -->
+            <a href="#" onclick="checkLoginState();" class="text-primary" style="font-size: 36px;">
+                <i class="fab fa-facebook"></i>
+            </a>
+
+            <!-- Ícono de Twitter -->
+            <a href="https://twitter.com/i/oauth2/authorize?client_id=TU_CLIENT_ID_DE_TWITTER&response_type=code&redirect_uri=TU_REDIRECT_URI&scope=tweet.read%20users.read" 
+               target="_blank" class="text-info" style="font-size: 36px;">
+                <i class="fab fa-twitter"></i>
+            </a>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-white text-center p-3">
+        <p>&copy; Ingeniería Industrial  © 2025 - UNIVO | All Rights Reserved</p>
+    </footer>
+</body>
+</html>
+ 
